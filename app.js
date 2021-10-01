@@ -27,8 +27,6 @@ function start(){
     var counter=0;
     var space= 0;
 
-
-
     var selectCat = function(){
         if (chosenCategory === categories[0]) {
       catagoryName.innerHTML = "The Chosen Category Is Premier League Football Teams";
@@ -44,7 +42,6 @@ function start(){
     // Create guess ul
     var result = function() {
         var guess;
-        var word = words.replace(/\s/g, "-");
         var correct =document.createElement('ul');
         correct.setAttribute('id','my-word');
         wordholder.appendChild(correct);
@@ -119,13 +116,12 @@ function start(){
         console.log(words);
         }
     document.getElementById('reset').onclick = function() {
-        start();
         modal.style['display'] = "none";
-        showcatagory.innerText ="";
-        document.getElementById('alphabet').remove();
         document.getElementById('my-word').remove();
-        selectCat();
+        document.getElementById('alphabet').remove();
+        showcatagory.innerText ="";
         showClue.innerHTML = "Clue -";
+        start();
   }
 }
 
