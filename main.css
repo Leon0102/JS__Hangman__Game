@@ -126,6 +126,18 @@ button:hover {
   color: var(--base-color);
 }
 
+.modal {
+  position: fixed;
+  top: 190px;
+  right: 0;
+  left: 0;
+  bottom: 410px;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  cursor: no-drop !important;
+}
+
 @media (max-width: 767px) {
   #alphabet {
     padding: 0 0 0 15px;

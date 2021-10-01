@@ -4,6 +4,7 @@ function start(){
     const getHint = document.getElementById('hint');
     const showClue = document.getElementById('clue');
     const wordholder = document.getElementById('hold');
+    const modal = document.querySelector('.modal');
     const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
                     'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
                      't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -101,10 +102,12 @@ function start(){
         livesShow.innerHTML = "You have " + lives + " lives";
          if (lives < 1) {
             livesShow.innerHTML = "Game Over";
+            modal.style['display'] = "block";
         }
         for (var i = 0; i < guesses.length; i++) {
         if (counter + space === guesses.length) {
             livesShow.innerHTML = "You Win!";
+            modal.style['display'] = "block";
         }
         }
     }
@@ -117,6 +120,7 @@ function start(){
         }
     document.getElementById('reset').onclick = function() {
         start();
+        modal.style['display'] = "none";
         showcatagory.innerText ="";
         document.getElementById('alphabet').remove();
         document.getElementById('my-word').remove();
